@@ -88,10 +88,10 @@ async function handleJsonRpc(request) {
                 response.result = await modelInstance.read(params);
                 break;
             case 'users.update':
-                await modelInstance.update(params);
+                response.result = await modelInstance.update(params);
                 break;
             case 'users.delete':
-                await modelInstance.delete(params.id);
+                response.result = await modelInstance.delete(params.id);
                 break;
             default:
                 throw new Error("Method not found");
